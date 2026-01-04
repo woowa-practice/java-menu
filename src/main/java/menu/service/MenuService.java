@@ -8,13 +8,20 @@ import java.util.List;
 public class MenuService {
     private final List<CategoryType> categoryTypes=new ArrayList<>();
 
-    public void suggest(Coaches coaches){
+    public List<String> suggest(Coaches coaches){
         for(int i=0; i<5; i++){
             categoryTypes.add(pickCategory());
             for (Coach coach : coaches.getCoaches()) {
                 suggestMenu(coach, categoryTypes.get(i));
             }
         }
+
+        List<String> categoryNames=new ArrayList<>();
+        for (CategoryType categoryType : categoryTypes) {
+            categoryNames.add(categoryType.getCategoryName());
+        }
+
+        return categoryNames;
     }
 
     private CategoryType pickCategory(){
