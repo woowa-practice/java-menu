@@ -5,9 +5,9 @@ import java.util.List;
 public class Category {
     private final int categoryNum;
     private final String categoryName;
-    private final List<String> menu;
+    private final List<Menu> menu;
 
-    public Category(int categoryNum, String categoryName, List<String> menu){
+    public Category(int categoryNum, String categoryName, List<Menu> menu){
         this.categoryNum=categoryNum;
         this.categoryName=categoryName;
         this.menu=menu;
@@ -21,7 +21,7 @@ public class Category {
         return categoryName;
     }
 
-    public List<String> getMenu(){
+    public List<Menu> getMenu(){
         return menu;
     }
 }
