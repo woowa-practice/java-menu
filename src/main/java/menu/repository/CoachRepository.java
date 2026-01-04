@@ -1,8 +1,6 @@
 package menu.repository;
 
-import menu.domain.Category;
 import menu.domain.Coach;
-import menu.domain.Menu;
 
 import java.util.*;
 
