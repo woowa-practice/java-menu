@@ -22,8 +22,9 @@ public class OutputView {
 
         List<Coach> coachList=coaches.getCoaches();
         for (Coach coach : coachList) {
-            System.out.print("[ "+coach);
+            System.out.print("[ "+coach.getName());
             coach.getEatenMenu().forEach(m-> System.out.print(" | "+m));
+            System.out.println(" ]");
         }
 
         System.out.println("\n추천을 완료했습니다.");
