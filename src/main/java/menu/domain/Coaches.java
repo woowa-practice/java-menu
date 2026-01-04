@@ -11,18 +11,6 @@ public class Coaches {
         this.coaches=new ArrayList<>(coaches);
     }
 
-    public void suggestCategory(String categoryName){
-        for (Coach coach : coaches) {
-            coach.addCategory(categoryName);
-        }
-    }
-
-    public void suggestMenu(String menuName){
-        for (Coach coach : coaches) {
-            coach.addMenu(menuName);
-        }
-    }
-
     public List<Coach> getCoaches(){
         return Collections.unmodifiableList(coaches);
     }
