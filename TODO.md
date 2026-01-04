@@ -27,24 +27,24 @@
 - getter
 
 ### 4. 예외처리
-**4.1. 코치 이름 글자 수 오류**
+**4.1. 코치 입력 오류**
 - null일 경우
   - "[ERROR] name can not null"
 - 입력 없을 경우
   - "[ERROR] name can not blank"
-- 2글자 미만일 경우
+- 이름 2글자 미만일 경우
   - "[ERROR] input at least two letter"
-- 4글자 초과일 경우
+- 이름 4글자 초과일 경우
   - "[ERROR] input limit is four"
-
-**4.2. 코치 명수 오류**
-- 2명 미만일 경우
+- 코치 2명 미만일 경우
   - "[ERROR] input at least two coach"
-- 5명 초과일 경우
+- 코치 5명 초과일 경우
   - "[ERROR] input limit is five"
 
-**4.2. 못 먹는 메뉴 개수 초과**
+**4.2. 못 먹는 메뉴 입력 오류**
 - null일 경우
   - "[ERROR] menu can not null"
 - 2개 초과일 경우
   - "[ERROR] input limit is two"
+- 리스트에 없는 메뉴 입력
+  - "[ERROR] menu is not listed"
