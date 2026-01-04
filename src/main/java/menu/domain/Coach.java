@@ -1,45 +1,39 @@
 package menu.domain;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
 public class Coach {
     private final String name;
-    private final Map<String, Integer> category;
-    private final List<String> menu;
     private final List<String> banMenu;
+    private final List<String> eatenMenu;
 
-    public Coach(String name, Map<String, Integer> category, List<String> menu, List<String> banMenu){
+    public Coach(String name, List<String> banMenu, List<String> eatenMenu){
         this.name=name;
-        this.category=category;
-        this.menu=menu;
         this.banMenu=banMenu;
+        this.eatenMenu=new ArrayList<>();
+    }
+
+    public boolean canEat(String menuName){
+        if(banMenu.contains(menuName)) return false;
+
+        if(eatenMenu.contains(menuName)) return false;
+
+        return true;
+    }
+
+    public void eat(String menuName){
+        eatenMenu.add(menuName);
     }
 
     public String getName(){
         return name;
     }
 
-    public Map<String, Integer> getCategory(){
-        return category;
+    public List<String> getEatenMenu(){
+        return Collections.unmodifiableList(eatenMenu);
     }
 
-    public List<String> getMenu() {
-        return menu;
-    }
-
-    public List<String> getBanMenu(){
-        return banMenu;
-    }
-
-    public void addCategory(String categoryName){
-        category.put(categoryName, category.getOrDefault(categoryName,0)+1);
-    }
-
-    public void addMenu(String menuName){
-        for (String s : banMenu) {
-            if(menuName.equals(s)) return;
-        }
-        menu.add(menuName);
-    }
 }
