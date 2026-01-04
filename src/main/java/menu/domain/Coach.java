@@ -9,7 +9,7 @@ public class Coach {
     private final List<String> banMenu;
     private final List<String> eatenMenu;
 
-    public Coach(String name, List<String> banMenu, List<String> eatenMenu) {
+    public Coach(String name, List<String> banMenu) {
         this.name = name;
         this.banMenu = banMenu;
         this.eatenMenu = new ArrayList<>();

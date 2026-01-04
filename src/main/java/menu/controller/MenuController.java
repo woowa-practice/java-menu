@@ -38,7 +38,7 @@ public class MenuController {
             List<String> banMenus = Arrays.stream(banMenu.split(","))
                     .map(String::trim)
                     .collect(Collectors.toList());
-            Coach coach = new Coach(name, banMenus, new ArrayList<>());
+            Coach coach = new Coach(name, banMenus);
             coachList.add(coach);
         }
 

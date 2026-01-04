@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MenuService {
-    private final List<CategoryType> categoryTypes = new ArrayList<>();
 
     public List<String> suggest(Coaches coaches) {
+        List<CategoryType> categoryTypes = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
-            categoryTypes.add(pickCategory());
+            categoryTypes.add(pickCategory(categoryTypes));
             for (Coach coach : coaches.getCoaches()) {
                 suggestMenu(coach, categoryTypes.get(i));
             }
@@ -24,7 +24,7 @@ public class MenuService {
         return categoryNames;
     }
 
-    private CategoryType pickCategory() {
+    private CategoryType pickCategory(List<CategoryType> categoryTypes) {
         while (true) {
             CategoryType category = CategoryType.from(RandomCategory.randomCategory());
 
