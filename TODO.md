@@ -32,10 +32,16 @@
   - "[ERROR] name can not null"
 - 입력 없을 경우
   - "[ERROR] name can not blank"
+- 2글자 미만일 경우
+  - "[ERROR] input at least two letter"
+- 4글자 초과일 경우
+  - "[ERROR] input limit is four"
+
+**4.2. 코치 명수 오류**
 - 2명 미만일 경우
   - "[ERROR] input at least two coach"
-- 4명 초과일 경우
-  - "[ERROR] input limit is four"
+- 5명 초과일 경우
+  - "[ERROR] input limit is five"
 
 **4.2. 못 먹는 메뉴 개수 초과**
 - null일 경우
