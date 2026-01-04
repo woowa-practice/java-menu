@@ -14,5 +14,11 @@ public class OutputView {
         System.out.print("[ 카테고리");
         category.forEach(s -> System.out.print(" | "+s));
         System.out.println(" ]");
+        for (String c : coach) {
+            System.out.print("[ "+c);
+            menu.forEach(m-> System.out.print(" | "+m));
+            System.out.println(" ]");
+        }
+        System.out.println("\n추천을 완료했습니다.");
     }
 }

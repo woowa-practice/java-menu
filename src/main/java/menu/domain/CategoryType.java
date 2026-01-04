@@ -20,6 +20,20 @@ public enum CategoryType {
         this.menuList=menuList;
     }
 
+    public static CategoryType valueOf(int number){
+        return Arrays.stream(values())
+                .filter(categoryType -> categoryType.categoryNum==number)
+                .findFirst()
+                .orElseThrow(()->new IllegalArgumentException());
+    }
+
+    public static CategoryType from(int number){
+        return Arrays.stream(values())
+                .filter(categoryType -> categoryType.categoryNum==number)
+                .findFirst()
+                .orElseThrow(()->new IllegalArgumentException());
+    }
+
     public int getCategoryNum() {
         return categoryNum;
     }

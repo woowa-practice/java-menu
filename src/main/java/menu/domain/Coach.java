@@ -31,4 +31,15 @@ public class Coach {
     public List<String> getBanMenu(){
         return banMenu;
     }
+
+    public void addCategory(String categoryName){
+        category.put(categoryName, category.getOrDefault(categoryName,0)+1);
+    }
+
+    public void addMenu(String menuName){
+        for (String s : banMenu) {
+            if(menuName.equals(s)) return;
+        }
+        menu.add(menuName);
+    }
 }
