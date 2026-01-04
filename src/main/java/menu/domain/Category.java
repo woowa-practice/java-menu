@@ -1,18 +1,16 @@
 package menu.domain;
 
-public enum Category {
-    JAPANESE(1, "일식"),
-    KOREAN(2, "한식"),
-    CHINESE(3, "중식"),
-    ASIAN(4, "아시안"),
-    WESTERN(5, "양식");
+import java.util.List;
 
+public class Category {
     private final int categoryNum;
     private final String categoryName;
+    private final List<String> menu;
 
-    Category(int categoryNum, String categoryName){
+    public Category(int categoryNum, String categoryName, List<String> menu){
         this.categoryNum=categoryNum;
         this.categoryName=categoryName;
+        this.menu=menu;
     }
 
     public int getCategoryNum(){
@@ -21,5 +19,9 @@ public enum Category {
 
     public String getCategoryName(){
         return categoryName;
+    }
+
+    public List<String> getMenu(){
+        return menu;
     }
 }
