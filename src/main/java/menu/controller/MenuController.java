@@ -17,34 +17,34 @@ public class MenuController {
     private final MenuService menuService;
 
     public MenuController(InputView inputView, OutputView outputView,
-                          MenuService menuService){
-        this.inputView=inputView;
-        this.outputView=outputView;
-        this.menuService=menuService;
+                          MenuService menuService) {
+        this.inputView = inputView;
+        this.outputView = outputView;
+        this.menuService = menuService;
     }
 
-    public void run(){
+    public void run() {
         outputView.startMenuSuggestion();
 
-        String coachName=inputView.inputCoachName();
-        List<String> coachNames= Arrays.stream(coachName.split(","))
+        String coachName = inputView.inputCoachName();
+        List<String> coachNames = Arrays.stream(coachName.split(","))
                 .map(String::trim)
                 .collect(Collectors.toList());
 
-        List<Coach> coachList=new ArrayList<>();
+        List<Coach> coachList = new ArrayList<>();
 
         for (String name : coachNames) {
-            String banMenu= inputView.inputBanMenu(name);
-            List<String> banMenus=Arrays.stream(banMenu.split(","))
+            String banMenu = inputView.inputBanMenu(name);
+            List<String> banMenus = Arrays.stream(banMenu.split(","))
                     .map(String::trim)
                     .collect(Collectors.toList());
-            Coach coach=new Coach(name, banMenus, new ArrayList<>());
+            Coach coach = new Coach(name, banMenus, new ArrayList<>());
             coachList.add(coach);
         }
 
-        Coaches coaches=new Coaches(coachList);
+        Coaches coaches = new Coaches(coachList);
 
-        List<String> resultCategory= menuService.suggest(coaches);
+        List<String> resultCategory = menuService.suggest(coaches);
 
         outputView.outputSuggestionMenu(resultCategory, coaches);
     }
